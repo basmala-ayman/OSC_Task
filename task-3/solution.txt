@@ -1,34 +1,36 @@
-  mkdir project_files
-  cd /home/basmala/project_files
-  mkdir reports logs data
-  cd /home/basmala/project_files/reports
-  touch report1.md report2.md
-  cd /home/basmala/project_files/logs
-  touch system.log error.log file1.pdf file2.pdf
-  cd /home/basmala/project_files/data
-  touch data.csv info.txt
-  nano data.csv
-  nano system.log
-  nano report1.md
-  tar cf logs_backup.tar error.log file1.pdf file2.pdf system.log
-  mv logs_backup.tar ~/project_files
-  cd ~/project_fiels
-  tar -xvf logs_backup.tar -C ~/project_files/logs
-  find ~ -name "*.md"
-  find . -name "*.log"
-  find . -name "file1.pdf"
-  find . -iname "*.pdf"
-  find ~/project_files/logs -type f
-  ln -s ./data/data.csv link_data.csv
-  echo check changes > link_data.csv
-  cat ~/project_files/data/data.csv
-  unlink link_data.csv
-  touch summary.txt
-  echo "Summary Start" >summary.txt
-  ls -l
-  cat summary.txt
-  cat summary.txt | wc -l | tee  summary.txt
-  cat report1.md | wc -w
-  cat ./logs/system.log | wc -c | tee summary.txt
-  ls | wc -l | tee summary.txt
-  cat summary.txt
+mkdir project_files
+cd /home/basmala/project_files
+mkdir reports logs data
+cd /home/basmala/project_files/reports
+touch report1.md report2.md
+cd /home/basmala/project_files/logs
+touch system.log error.log file1.pdf file2.pdf
+cd /home/basmala/project_files/data
+touch data.csv info.txt
+nano data.csv
+cd /home/basmala/project_files/logs
+nano system.log
+cd /home/basmala/project_files/reports
+nano report1.md
+cd -
+tar cf logs_backup.tar error.log file1.pdf file2.pdf system.log
+mv logs_backup.tar ~/project_files
+cd ~/project_fiels
+tar -xvf logs_backup.tar -C ~/project_files/logs
+find ~ -name "*.md"
+find . -name "*.log"
+find . -name "file1.pdf"
+find . -iname "*.pdf"
+find ~/project_files/logs -type f
+ln -s ./data/data.csv link_data.csv
+echo check changes > link_data.csv
+cat ~/project_files/data/data.csv
+unlink link_data.csv
+touch summary.txt
+echo "Summary Start" >summary.txt
+ls -l
+wc -l summary.txt | tee -a summary.txt
+cat report1.md | wc -w
+wc -c ./logs/system.log | tee -a summary.txt
+ls | wc -l | tee -a summary.txt
+cat summary.txt
